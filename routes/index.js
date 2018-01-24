@@ -1,8 +1,16 @@
-const express = require('express');
-const router = express.Router();
+'use strict';
 
-router.get('/', (req, res) => {
-  res.render('index', { title: 'Express' });
-});
+const BaseRoute = require('./base');
 
-module.exports = router;
+class IndexRoute extends BaseRoute {
+  constructor() {
+    super();
+    this.router.get('/', this.getIndex.bind(this));
+  }
+
+  getIndex(req, res) {
+    res.render('index', { title: 'Express' });
+  }
+}
+
+module.exports = IndexRoute;
