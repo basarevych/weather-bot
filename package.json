@@ -1,17 +1,21 @@
 {
   "name": "weather-bot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "env NODE_ENV=production node ./bin/www",
+    "lint": "node ./node_modules/eslint/bin/eslint . --max-warnings=0 || exit 0"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
+    "debug": "~3.1.0",
     "ejs": "~2.5.7",
-    "express": "~4.15.5",
+    "express": "~4.16.2",
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "eslint": "~4.16.0"
   }
 }
