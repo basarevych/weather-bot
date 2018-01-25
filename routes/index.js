@@ -3,8 +3,8 @@
 const BaseRoute = require('./base');
 
 class IndexRoute extends BaseRoute {
-  constructor() {
-    super();
+  constructor(app) {
+    super(app);
     this.router.get('/', this.getIndex.bind(this));
   }
 

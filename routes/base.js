@@ -3,12 +3,9 @@
 const express = require('express');
 
 class BaseRoute {
-  constructor() {
+  constructor(app) {
+    this.app = app;
     this.router = express.Router();
-  }
-
-  install(app, route) {
-    app.use(route, this.router);
   }
 }
 
